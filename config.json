@@ -13,7 +13,7 @@
     "gmail-password":"-",
     "no_of_images": 10,
     "no_of_files": 10,
-    "admin_user": "samyak",
+    "admin_user": "admin",
     "upload_location": "D:\\PycharmProjects\\HPCL_Web_Dev\\static\\img",
     "admin_pass": "hello"
   }
