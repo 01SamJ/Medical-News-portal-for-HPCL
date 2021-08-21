@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.79.0">
+    <title>Edit Entries</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="{{ url_for('static', filename='assets/dist/js/bootstrap.bundle.min.js') }}"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+  }
+  </style>
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="{{ url_for('static', filename='assets/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      body{
+        color: #d90022;
+        font-size: 2rem;
+      }
+
+      .text-muted {
+        color: #d90022 !important;
+      }
+      .lead {
+      font-size: 1.25rem;
+      font-weight: 350;
+      color: black;
+      }
+      .navbar {
+     padding-top: 0;
+     padding-bottom: 0;
+      }
+      
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+     .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+    background: #2160b0;
+    font-size: initial;
+}
+    .btn-secondary {
+        color: #fff;
+        background-color: #1a59ad;
+        border-color: #6c757d;
+    }
+    .btn-secondary:hover {
+  color: #fff;
+  background-color: #b90205;
+  border-color: #565e64;
+}
+
+}
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/carousel.css') }}" rel="stylesheet">
+  </head>
+  <body>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img class ="img-responsive" src="{{ url_for('static', filename='img/hpcl_logo.png') }}" alt="Hindustan Petroleum Corporation Limited Future full of Energy."></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0" style="padding-left: 2rem;">
+          <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="/">{{ params['tab1_name'] }}</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/Opentalks">{{ params['tab2_name'] }}</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/Healthcheck">{{params['tab3_name']}}</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/Knowledge">{{params['tab4_name']}}</a>
+          </li>
+        </ul>
+         <ul class="nav navbar-nav navbar-right" >
+          <li ><a style="color: #0a0480" href="/"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+         </ul>
+        
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<a href="/login"><button style="margin-left: 5rem;" class="btn btn-primary">Back to Dashboard</button></a>
+   <form style="margin: 5rem !important;" name="sentMessage" id="EditForm" action = "/edit_opentalks_img/{{sno}}" method="post" novalidate>
+    
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Title" id="title" name='title' required data-validation-required-message="Please enter your name." value="{{img.title}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Filename</label>
+                <input type="email" value="{{img.filename}}" class="form-control" placeholder="Filename" id="filename" name="filename">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Caption</label>
+                <input type="text" class="form-control" value="{{img.caption}}" placeholder="Caption" id="caption" name="caption" required data-validation-required-message="enter caption">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+           
+            
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <center>
+              <button  type="submit" class="btn btn-primary " id="sendMessageButton">Submit</button>
+            </center>
+            </div>
+          </form>
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <center>
+    <p>&copy; Hindustan Petroleum Corporation Limited &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </center>
+  </footer>
+</main>
+
+
+    <script src="{{ url_for('static', filename='assets/dist/js/bootstrap.bundle.min.js') }}"></script>
+
+      
+  </body>
+</html>

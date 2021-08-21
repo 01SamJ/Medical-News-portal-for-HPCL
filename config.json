@@ -1,0 +1,21 @@
+{
+  "params":
+  {
+    "tab1_name" : "Announcements",
+    "tab2_name" : "Open Talks",
+    "tab3_name" : "Health Check-ups/Tests",
+    "tab4_name" : "Knowledge Centre",
+    "tab5_name" : " Admin Dashboard",
+    "local_server":"True",
+    "local_uri": "mysql://root:@localhost/hpcl_showcase",
+    "prod_uri": "mysql://root:@localhost/hpcl_showcase",
+    "gmail-user":"-",
+    "gmail-password":"-",
+    "no_of_images": 10,
+    "no_of_files": 10,
+    "admin_user": "samyak",
+    "upload_location": "D:\\PycharmProjects\\HPCL_Web_Dev\\static\\img",
+    "admin_pass": "hello"
+  }
+
+}
